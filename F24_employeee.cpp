@@ -36,7 +36,7 @@ struct Employee {
     }
 };
 
-// Function to load all employees into memory
+
 vector<Employee> loadEmployees() {
     vector<Employee> list;
     ifstream inFile("employees.txt");
@@ -49,7 +49,7 @@ vector<Employee> loadEmployees() {
     return list;
 }
 
-// Function to save all employees back to file in sorted order
+
 void saveEmployees(const vector<Employee> &list) {
     ofstream outFile("employees.txt");
     for (size_t i = 0; i < list.size(); ++i) {
@@ -58,7 +58,7 @@ void saveEmployees(const vector<Employee> &list) {
     outFile.close();
 }
 
-// Add a new employee
+
 void addEmployee() {
     vector<Employee> list = loadEmployees();
     Employee e;
@@ -85,7 +85,7 @@ void addEmployee() {
 
     list.push_back(e);
 
-    // Sort using normal compare function
+
     for (size_t i = 0; i < list.size(); ++i) {
         for (size_t j = i + 1; j < list.size(); ++j) {
             if (list[i].id > list[j].id) {
@@ -100,7 +100,7 @@ void addEmployee() {
     cout << "Employee added successfully.\n";
 }
 
-// Delete an employee by ID
+
 void deleteEmployee() {
     vector<Employee> list = loadEmployees();
     int id;
@@ -126,7 +126,7 @@ void deleteEmployee() {
     }
 }
 
-// Display a particular employee by ID
+
 void displayEmployee() {
     vector<Employee> list = loadEmployees();
     int id;
@@ -151,7 +151,7 @@ void displayEmployee() {
     }
 }
 
-// Main Menu
+
 int main() {
     int choice;
     do {
