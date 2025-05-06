@@ -2,14 +2,14 @@
 #include <string>
 using namespace std;
 
-struct node // Node Declaration
+struct node 
 {
     string label;
     int ch_count;
     struct node *child[10];
 } *root;
 
-class GT // Class Declaration
+class GT 
 {
 public:
     void create_tree();
@@ -26,7 +26,7 @@ void GT::create_tree()
     root = new node;
     
     cout << "Enter name of book : ";
-    cin.ignore(); // Clear input buffer
+    cin.ignore(); 
     getline(cin, root->label);
     
     cout << "Enter number of chapters in book : ";
@@ -37,7 +37,7 @@ void GT::create_tree()
     {
         root->child[i] = new node;
         cout << "Enter the name of Chapter " << i + 1 << " : ";
-        cin.ignore(); // Clear input buffer
+        cin.ignore(); 
         getline(cin, root->child[i]->label);
         
         cout << "Enter number of sections in Chapter : " << root->child[i]->label << " : ";
@@ -47,7 +47,7 @@ void GT::create_tree()
         {
             root->child[i]->child[j] = new node;
             cout << "Enter Name of Section " << j + 1 << " : ";
-            cin.ignore(); // Clear input buffer
+            cin.ignore(); 
             getline(cin, root->child[i]->child[j]->label);
             
             cout << "Enter number of subsections in Section " << root->child[i]->child[j]->label << " : ";
@@ -57,10 +57,10 @@ void GT::create_tree()
             {
                 root->child[i]->child[j]->child[k] = new node;
                 cout << "Enter Name of Subsection " << k + 1 << " : ";
-                cin.ignore(); // Clear input buffer
+                cin.ignore(); 
                 getline(cin, root->child[i]->child[j]->child[k]->label);
                 
-                // Initialize subsection's child count to 0
+
                 root->child[i]->child[j]->child[k]->ch_count = 0;
             }
         }
@@ -116,7 +116,7 @@ int main()
         {
         case 1:
             gt.create_tree();
-            break; // Added missing break statement
+            break; 
         case 2:
             gt.display(root);
             break;
