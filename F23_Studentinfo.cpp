@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <sstream>  // ? Added for string to int conversion
+#include <sstream>  
 using namespace std;
 
 struct Student {
@@ -11,10 +11,10 @@ struct Student {
     string address;
 };
 
-// Function to add student to file
+
 void addStudent() {
     Student s;
-    ofstream outFile("students.txt", ios::app);  // Open file in append mode
+    ofstream outFile("students.txt", ios::app);  
 
     cout << "Enter Roll Number: ";
     cin >> s.roll;
@@ -35,7 +35,7 @@ void addStudent() {
     cout << "Student record added successfully.\n";
 }
 
-// Function to display a specific student by roll number
+
 void displayStudent() {
     int searchRoll;
     cout << "Enter roll number to search: ";
@@ -79,7 +79,7 @@ void displayStudent() {
     }
 }
 
-// Function to delete a student by roll number
+
 void deleteStudent() {
     int deleteRoll;
     cout << "Enter roll number to delete: ";
@@ -117,7 +117,6 @@ void deleteStudent() {
     }
 }
 
-// Main menu
 int main() {
     int choice;
     do {
